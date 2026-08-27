@@ -55,6 +55,11 @@ if TYPE_CHECKING:
 
 application = Flask(__name__)
 
+# Agent AI Control Center: graphical control plane for Foundry assets and integrations.
+from agent.ai_control import ai_control
+application.register_blueprint(ai_control)
+
+
 SENSITIVE_CONFIG_KEYS = {
     "access_token",
     "redis_port",
@@ -100,7 +105,7 @@ log.handlers = []
 
 @application.before_request
 def validate_access_token():
-    exempt_endpoints = ["get_metrics"]
+    exempt_endpoints = ["get_metrics", "ai_control.channel_openapi"]
     if request.endpoint in exempt_endpoints:
         return None
 
