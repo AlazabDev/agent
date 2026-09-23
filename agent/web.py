@@ -19,6 +19,7 @@ from rq.job import JobStatus
 from agent.ai_control import ai_control
 from agent.backup_log import InvalidRange, parse_range
 from agent.base import AgentException
+from agent.bench_dev_routes import bench_dev_bp
 from agent.builder import ImageBuilder, PatchImageBuilder
 from agent.database import JSONEncoderForSQLQueryResult
 from agent.database_physical_backup import DatabasePhysicalBackup
@@ -58,6 +59,10 @@ application = Flask(__name__)
 
 # Agent AI Control Center: graphical control plane for Foundry assets and integrations.
 application.register_blueprint(ai_control)
+
+# Bench Dev: sandboxed per-agent git-worktree source-development surface, discoverable
+# as Production Tools and bindable to Foundry coding agents (Codex and successors).
+application.register_blueprint(bench_dev_bp)
 
 
 SENSITIVE_CONFIG_KEYS = {

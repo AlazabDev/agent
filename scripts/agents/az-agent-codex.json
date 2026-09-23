@@ -1,0 +1,7 @@
+{
+  "agent_name": "az-agent-codex",
+  "bench_name": "REPLACE_WITH_YOUR_BENCH_NAME",
+  "bench_apps": ["uberfix"],
+  "tool_categories": ["bench-dev"],
+  "extra_tool_ids": []
+}

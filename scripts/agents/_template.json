@@ -1,0 +1,12 @@
+{
+  "_instructions": "انسخ هذا الملف باسم <agent-name>.json وعدّل القيم الستة التالية فقط. لا تحتاج تعديل register_agent.py أبدًا.",
+  "agent_name": "az-agent-<role>",
+  "_agent_name_note": "يجب أن يطابق اسم الوكيل بالحرف كما هو مسجّل في مشروع Azure AI Foundry (az-ai-gateway).",
+  "bench_name": "اسم-الـ-bench",
+  "bench_apps": ["اسم-تطبيق-1", "اسم-تطبيق-2"],
+  "_bench_apps_note": "التطبيقات التي يُسمح لهذا الوكيل بالعمل عليها فقط؛ كل تطبيق يحصل له تلقائيًا على فرع وmasaha عمل معزولة.",
+  "tool_categories": ["bench-dev"],
+  "_tool_categories_note": "فئات الأدوات المكتشفة تلقائيًا لربطها بهذا الوكيل. اترك bench-dev للوكلاء المطورين؛ أضف فئات أخرى (site, database, server...) فقط للوكلاء المتخصصة في التشغيل.",
+  "extra_tool_ids": [],
+  "_extra_tool_ids_note": "أرقام أدوات محددة إضافية (اختياري) من نتيجة GET /ai/api/production-tools إن احتجت ربط أداة لا تطابق فئة."
+}
